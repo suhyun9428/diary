@@ -1,0 +1,45 @@
+.button{
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background: rgb(236, 236, 236);
+    font-size: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.button__positive{
+    background: greenyellow;
+    color: white;
+}
+.button__negative{
+    background: red;
+    color: white;
+}
+.button__right{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    margin-right: 10px;
+    padding: 5px;
+    border: solid black;
+    border-radius: 0;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    vertical-align: middle;
+}
+.button__left{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    margin-left: 10px;
+    padding: 5px;
+    border: solid black;
+    border-radius: 0;
+    border-width: 0 2px 2px 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    vertical-align: middle;
+}
