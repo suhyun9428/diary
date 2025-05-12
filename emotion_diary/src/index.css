@@ -42,7 +42,7 @@ body{
       height: 80px;
       padding: 10px 0;
       font-size: 0;
-      .box__image{
+      .link__image{
         display: inline-block;
         width: 120px;
         height: 80px;
@@ -58,23 +58,23 @@ body{
           object-fit: cover;
           transform: translate(-50%, -50%);
         }
-        &.box__image1{
+        &.link__image1{
           background-color: rgb(100, 201, 100);
         }
-        &.box__image2{
+        &.link__image2{
           background-color: rgb(157, 215, 114);
         }
-        &.box__image3{
+        &.link__image3{
           background-color: rgb(253, 206, 23);
         }
-        &.box__image4{
+        &.link__image4{
           background-color: rgb(253, 132, 70);
         }
-        &.box__image5{
+        &.link__image5{
           background-color: rgb(253, 86, 95);
         }
       }
-      .box__info{
+      .link__info{
         display: inline-block;
         width: calc(100% - 180px);
         margin: 10px;

@@ -24,8 +24,21 @@ const mockData = [
     createdDate : new Date('2025-02-18').getTime(),
     emotionId : 3,
     content : '3번 일기 내용'
+  },
+  {
+    id : 4,
+    createdDate : new Date('2025-05-18').getTime(),
+    emotionId : 4,
+    content : '4번 일기 내용'
+  },
+  {
+    id : 5,
+    createdDate : new Date('2025-05-11').getTime(),
+    emotionId : 5,
+    content : '5번 일기 내용'
   }
-]
+];
+
 const reducer = (state, action) => {
   switch(action.type) {
     case 'CREATE' : 
@@ -46,7 +59,7 @@ export const DiaryDispatchContext = createContext();
 
 const App = () => {
   const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(4);
+  const idRef = useRef(6);
 
   const onCreate = (createdDate, emotionId, content) => {
     dispatch({
@@ -64,9 +77,8 @@ const App = () => {
     dispatch({
       type : 'UPDATE',
       data:{
-        id, createdDate, emotionId, content
+        id, createdDate, emotionId, content,
       }
-
     })
   };
 
@@ -83,8 +95,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/new" element={<New />}/>
-          <Route path="/diary" element={<Diary />}/>
-          <Route path="/edit" element={<Edit />}/>
+          <Route path="/diary/:id" element={<Diary />}/>
+          <Route path="/edit/:id" element={<Edit />}/>
           <Route path="*" element={<Notfound />}/>
         </Routes>
       </DiaryDispatchContext.Provider>
@@ -92,4 +104,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
