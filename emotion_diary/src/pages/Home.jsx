@@ -29,8 +29,8 @@ const Home = ()=>{
     <>
       <Header 
         title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth()+1}월`}
-        leftChiild={<Button type="LEFT" onClick={onDecreaseMonth} />}
-        rightChild={<Button type="RIGHT" onClick={onIncreaseMonth} />}
+        leftChiild={<Button type="LEFT" onClick={onDecreaseMonth} text={"지난 달"} />}
+        rightChild={<Button type="RIGHT" onClick={onIncreaseMonth} text={"다음 달"} />}
       />
       <DiaryListWrap data={monthlyData}/>
     </>

@@ -1,4 +1,3 @@
-import "./Button.css"
 import classNames from 'classnames';
 
 const Button = ({ text, type, onClick }) => {
@@ -9,6 +8,7 @@ const Button = ({ text, type, onClick }) => {
     'button__left': type === 'LEFT',
     'button__right': type === 'RIGHT',
     'button__add': type === 'CREATE',
-  })} onClick={onClick}>{text}</button>)
+  })} onClick={onClick}>
+    <span className={classNames('text', {'for-a11y' : (type === 'LEFT' || type === 'RIGHT')})}>{text}</span></button>)
 }
 export default Button;

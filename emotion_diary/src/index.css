@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
 }
+.for-a11y{
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
 body{
   width: 100%;
   background-color: rgb(246, 246, 246);
@@ -16,6 +26,66 @@ body{
   background-color: white;
   box-shadow: rgba(100, 100, 100, 0.2) 0 0 29px 0;
   box-sizing: border-box;
+}
+header{
+  display: flex;
+  height: 48px;
+  border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
+  align-items: center;
+  .button{
+    background-color: transparent;
+    color: black;
+  }
+  .text__title{
+    margin: 0;
+    font-size: 18px;
+  }
+}
+.button{
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  background: rgb(236, 236, 236);
+  font-size: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.button__positive{
+  background: greenyellow;
+  color: white;
+}
+.button__negative{
+  background: red;
+  color: white;
+}
+.button__right{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  margin-right: 10px;
+  padding: 5px;
+  border: solid black;
+  border-radius: 0;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  vertical-align: middle;
+}
+.button__left{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  margin-left: 10px;
+  padding: 5px;
+  border: solid black;
+  border-radius: 0;
+  border-width: 0 2px 2px 0;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  vertical-align: middle;
 }
 .box__diary-filter{
   display: flex;
@@ -111,6 +181,37 @@ body{
       }
       &+.list-item{
         border-top: 1px solid #e0e0e0;
+      }
+    }
+  }
+}
+.box__edit-content{
+  .box__date{
+    .text{
+      font-size: 18px;
+    }
+    .form__date{
+      border: 0;
+      border-radius: 5px;
+      background: rgb(236, 236, 236);
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+  }
+  .box__emotion{
+    .box__cards-wrap{
+      display: flex;
+      gap: 5px;
+      .box__emotion-card{
+        flex: 1;
+        padding: 10px;
+        border-radius: 15px;
+        background: rgb(236, 236, 236);
+        text-align: center;
+        box-sizing: border-box;
+        .image{
+          width: 30px;
+        }
       }
     }
   }

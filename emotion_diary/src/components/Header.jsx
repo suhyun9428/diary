@@ -1,5 +1,3 @@
-import './Header.css'
-
 const Header = ({ title, leftChiild, rightChild }) => {
   return (
     <header>

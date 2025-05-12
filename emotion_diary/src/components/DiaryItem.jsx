@@ -8,7 +8,7 @@ const DiaryItem = ({id, emotionId, createdDate, content})=>{
   return(
     <li className="list-item">
       <a href="#" className={`link__image link__image${emotionId}`} onClick={()=>nav(`/diary/${id}`)}>
-        <img className="image" src={getEmotionImage(emotionId)} alt="기분 좋음"/>
+        <img className="image" src={getEmotionImage(emotionId).src} alt={getEmotionImage(emotionId).alt}/>
       </a>
       <a className="link__info">
         <p className="text__date">{new Date(createdDate).toLocaleDateString()}</p>  
