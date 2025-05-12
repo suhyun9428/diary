@@ -20,10 +20,10 @@ const DiaryListWrap = ({data}) => {
   const sortedData = getSortedData();
 
   return(
-    <>
+    <div className="box__diary-content">
       <DiaryFilter handleSortType={handleSortType} sortType={sortType}/>
       <DiaryList sortedData={sortedData}/>
-    </>
+    </div>
   )
 }
 export default DiaryListWrap;

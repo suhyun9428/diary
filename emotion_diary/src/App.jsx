@@ -1,11 +1,11 @@
-import './App.css'
 import { useReducer, useRef, createContext } from 'react'
 import Home from './pages/Home'
 import Diary from './pages/Diary'
 import New from './pages/New'
 import Edit from './pages/Edit'
 import Notfound from './pages/Notfound'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+
 const mockData = [
   {
     id : 1,

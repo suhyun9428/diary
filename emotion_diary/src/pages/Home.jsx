@@ -10,7 +10,7 @@ const getMonthlyData = (pivotDate, data) => {
   const endTime = new Date(pivotDate.getFullYear(), pivotDate.getMonth() +1, 0, 23, 59, 59).getTime();
 
   return data.filter((item) => beginTime <= item.createdDate && item.createdDate <= endTime);
-}
+};
 
 const Home = ()=>{
   const data = useContext(DiaryStateContext);
@@ -32,10 +32,9 @@ const Home = ()=>{
         leftChiild={<Button type="LEFT" onClick={onDecreaseMonth} />}
         rightChild={<Button type="RIGHT" onClick={onIncreaseMonth} />}
       />
-      <div className='box__diary-list-wrap'>
-        <DiaryListWrap data={monthlyData}/>
-      </div>
+      <DiaryListWrap data={monthlyData}/>
     </>
   )
-}
+};
+
 export default Home;

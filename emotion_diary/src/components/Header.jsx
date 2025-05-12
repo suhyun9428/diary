@@ -1,6 +1,6 @@
 import './Header.css'
 
-const Header = ({title, leftChiild, rightChild}) => {
+const Header = ({ title, leftChiild, rightChild }) => {
   return (
     <header>
       {leftChiild}

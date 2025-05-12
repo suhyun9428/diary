@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const DiaryFilter = ({handleSortType, sortType}) => {
   const nav = useNavigate();
+  
   return(
     <div className="box__diary-filter">
       <select className="form__filter" onChange={handleSortType} value={sortType}>
