@@ -8,6 +8,8 @@ const Button = ({ text, type, onClick }) => {
     'button__left': type === 'LEFT',
     'button__right': type === 'RIGHT',
     'button__add': type === 'CREATE',
+    'button__confirm': type === 'CONFIRM',
+    'button__cancel':type === 'CANCEL',
   })} onClick={onClick}>
     <span className={classNames('text', {'for-a11y' : (type === 'LEFT' || type === 'RIGHT')})}>{text}</span></button>)
 }

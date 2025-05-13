@@ -1,6 +1,25 @@
+@font-face {
+  font-family: Gmarket-sans ;
+  src: url(../public/GmarketSansLight.otf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Gmarket-sans ;
+  src: url(../public/GmarketSansMedium.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Gmarket-sans ;
+  src: url(../public/GmarketSansBold.otf);
+  font-weight: bold;
+}
+
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Gmarket-sans';
+  font-weight: normal;
+  box-sizing: border-box;
 }
 .for-a11y{
   overflow: hidden;
@@ -12,13 +31,17 @@
   border: 0;
   clip: rect(0 0 0 0)
 }
+html{
+  height: 100%;
+}
 body{
   width: 100%;
   background-color: rgb(246, 246, 246);
 }
 #root{
   width: 100%;
-  max-width: 600px;
+  min-width: 320px;
+  max-width: 768px;
   min-height: 100vh;
   height: 100%;
   margin: 0 auto;
@@ -26,19 +49,40 @@ body{
   background-color: white;
   box-shadow: rgba(100, 100, 100, 0.2) 0 0 29px 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 header{
-  display: flex;
-  height: 48px;
+  position: relative;
   border-bottom: 1px solid #e0e0e0;
-  justify-content: space-between;
-  align-items: center;
   .button{
     background-color: transparent;
     color: black;
+    &.button__left{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -6px;
+    }
+    &.button__right,
+    &.button__cancel{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -6px;
+    }
+    &.button__cancel{
+      margin-top: -20px;
+      background-color: red;
+      color: white;
+    }
   }
   .text__title{
+    display: inline-flex;
+    width: 100%;
+    height: 48px;
     margin: 0;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
   }
 }
@@ -87,6 +131,10 @@ header{
   -webkit-transform: rotate(135deg);
   vertical-align: middle;
 }
+.button__confirm{
+  background: greenyellow;
+  color: white;
+}
 .box__diary-filter{
   display: flex;
   margin: 20px 0;
@@ -108,10 +156,12 @@ header{
 }
 .box__diary-list{
   .list__diary{
+    list-style: none;
     .list-item{
       height: 80px;
       padding: 10px 0;
       font-size: 0;
+      box-sizing: content-box;
       .link__image{
         display: inline-block;
         width: 120px;
@@ -186,25 +236,35 @@ header{
   }
 }
 .box__edit-content{
-  .box__date{
+  margin: 20px 0;
+  .box__section{
     .text{
-      font-size: 18px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
+    &+.box__section{
+      margin-top: 20px;
+    }
+  }
+  .box__date{
     .form__date{
+      height: 36px;
+      padding: 10px 20px;
       border: 0;
       border-radius: 5px;
       background: rgb(236, 236, 236);
-      font-size: 20px;
-      padding: 10px 20px;
+      font-size: 16px;
+      box-sizing: border-box;
     }
   }
   .box__emotion{
     .box__cards-wrap{
       display: flex;
       gap: 5px;
-      .box__emotion-card{
+      .button__emotion-card{
         flex: 1;
         padding: 10px;
+        border: 0;
         border-radius: 15px;
         background: rgb(236, 236, 236);
         text-align: center;
@@ -212,7 +272,42 @@ header{
         .image{
           width: 30px;
         }
+        &.button__emotion-card--selected{
+          color: white;
+          &:first-child{
+            background-color: rgb(100, 201, 100);
+          }
+          &:nth-child(2){
+            background-color: rgb(157, 215, 114);
+          }
+          &:nth-child(3){
+            background-color: rgb(253, 206, 23);
+          }
+          &:nth-child(4){
+            background-color: rgb(253, 132, 70);
+          }
+          &:last-child{
+            background-color: rgb(253, 86, 95);
+          }
+        }
       }
     }
+  }
+  .box__contents{
+    .form__diary-content{
+      width: 100%;
+      min-height: 200px;
+      padding: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(236, 236, 236);
+      font-size: 16px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+  }
+  .box__button-wrap{
+    display: flex;
+    justify-content: space-between;
   }
 }
