@@ -71,9 +71,11 @@ header{
       margin-top: -6px;
     }
     &.button__cancel{
-      margin-top: -20px;
-      background-color: red;
-      color: white;
+      width: 32px;
+      height: 32px;
+      margin-top: -16px;
+      padding: 0;
+      background: url(./assets/image__delete.png) no-repeat center / 32px;
     }
   }
   .text__title{
@@ -90,7 +92,7 @@ header{
   padding: 10px 20px;
   border: 0;
   border-radius: 5px;
-  background: rgb(236, 236, 236);
+  background: #f0edea;
   font-size: 18px;
   white-space: nowrap;
   cursor: pointer;
@@ -132,7 +134,7 @@ header{
   vertical-align: middle;
 }
 .button__confirm{
-  background: greenyellow;
+  background: #f7c59f;
   color: white;
 }
 .box__diary-filter{
@@ -149,7 +151,7 @@ header{
   }
   .button__add{
     flex: 1;
-    background: green;
+    background: #5c8a58;
     font-size: 14px;
     color: white;
   }
@@ -169,6 +171,7 @@ header{
         border-radius: 8px;
         overflow: hidden;
         vertical-align: top;
+        background-color: #fef7e3;
         .image{
           height: 80px;
           position: relative;
@@ -179,19 +182,19 @@ header{
           transform: translate(-50%, -50%);
         }
         &.link__image1{
-          background-color: rgb(100, 201, 100);
+          border: 2px solid rgb(100, 201, 100);
         }
         &.link__image2{
-          background-color: rgb(157, 215, 114);
+          border: 2px solid rgb(157, 215, 114);
         }
         &.link__image3{
-          background-color: rgb(253, 206, 23);
+          border: 2px solid rgb(253, 206, 23);
         }
         &.link__image4{
-          background-color: rgb(253, 132, 70);
+          border: 2px solid rgb(253, 132, 70);
         }
         &.link__image5{
-          background-color: rgb(253, 86, 95);
+          border: 2px solid rgb(253, 86, 95);
         }
       }
       .link__info{
@@ -227,6 +230,12 @@ header{
           font-size: 12px;
           box-sizing: border-box;
           transform: translateY(-50%);
+          &.button__edit{
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            background: url(./assets/image__edit.png)  no-repeat center / 32px;
+          }
         }
       }
       &+.list-item{
@@ -239,8 +248,9 @@ header{
   margin: 20px 0;
   .box__section{
     .text{
-      font-size: 16px;
       margin-bottom: 10px;
+      font-size: 16px;
+      color: #2e2a27;
     }
     &+.box__section{
       margin-top: 20px;
@@ -252,8 +262,8 @@ header{
       padding: 10px 20px;
       border: 0;
       border-radius: 5px;
-      background: rgb(236, 236, 236);
-      font-size: 16px;
+      background: #fef7e3;
+      font-size: 14px;
       box-sizing: border-box;
     }
   }
@@ -263,31 +273,30 @@ header{
       gap: 5px;
       .button__emotion-card{
         flex: 1;
-        padding: 10px;
-        border: 0;
-        border-radius: 15px;
-        background: rgb(236, 236, 236);
+        padding: 5px;
+        border-color: transparent;
+        border-radius: 10px;
+        background: #fef7e3;
         text-align: center;
         box-sizing: border-box;
         .image{
-          width: 30px;
+          width: 46px;
         }
         &.button__emotion-card--selected{
-          color: white;
           &:first-child{
-            background-color: rgb(100, 201, 100);
+            border: 2px solid rgb(100, 201, 100);
           }
           &:nth-child(2){
-            background-color: rgb(157, 215, 114);
+            border: 2px solid rgb(157, 215, 114);
           }
           &:nth-child(3){
-            background-color: rgb(253, 206, 23);
+            border: 2px solid rgb(253, 206, 23);
           }
           &:nth-child(4){
-            background-color: rgb(253, 132, 70);
+            border: 2px solid rgb(253, 132, 70);
           }
           &:last-child{
-            background-color: rgb(253, 86, 95);
+            border: 2px solid rgb(253, 86, 95);
           }
         }
       }
@@ -297,11 +306,13 @@ header{
     .form__diary-content{
       width: 100%;
       min-height: 200px;
-      padding: 20px;
+      padding: 16px;
       border: none;
-      border-radius: 5px;
-      background-color: rgb(236, 236, 236);
+      border-radius: 8px;
+      background-color: #fef7e3;
       font-size: 16px;
+      color: #5a4b3c;
+      line-height: 1.5;
       box-sizing: border-box;
       resize: vertical;
     }
@@ -319,41 +330,44 @@ header{
     height: 250px;
     margin: 10px auto 0;
     border-radius: 8px;
+    background-color: #fef7e3;
     &.box__emotion1{
-      background-color: rgb(100, 201, 100);
+      border: 2px solid rgb(100, 201, 100);
     }
     &.box__emotion2{
-      background-color: rgb(157, 215, 114);
+      border: 2px solid rgb(157, 215, 114);
     }
     &.box__emotion3{
-      background-color: rgb(253, 206, 23);
+      border: 2px solid rgb(253, 206, 23);
     }
     &.box__emotion4{
-      background-color: rgb(253, 132, 70);
+      border: 2px solid rgb(253, 132, 70);
     }
     &.box__emotion5{
-      background-color: rgb(253, 86, 95);
+      border: 2px solid rgb(253, 86, 95);
     }
     .image{
+      width: 80%;
       padding: 20px;
     }
-    .text__context{
-      color: white;
+    .text__emotion{
+      color: #4b3f33;
     }
   }
   .box__text-area{
     margin-top: 30px;
     .box__content{
       width: 100%;
-      height: 90px;
+      min-height: 90px;
       margin-top: 10px;
       padding: 16px;
       border: 0;
       border-radius: 8px;
       background: antiquewhite;
-      word-break: keep-all;
-      overflow-wrap: break-word;
+      font-size: 13px;
+      color: #5a4b3c;
       line-height: 1.5;
+      text-align: left;
     }
   }
 }

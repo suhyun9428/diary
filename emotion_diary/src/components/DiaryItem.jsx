@@ -15,7 +15,7 @@ const DiaryItem = ({id, emotionId, createdDate, content})=>{
         <p className="text__context">{content}</p>
       </a>
       <div className="box__button-wrap">
-        <Button text={"🖋"} onClick={() => nav(`/edit/${id}`)}/>
+        <Button type={'EDIT'} text={"수정하기"} onClick={() => nav(`/edit/${id}`)}/>
       </div>
     </li>
   )

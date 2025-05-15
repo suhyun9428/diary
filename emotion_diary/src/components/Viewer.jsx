@@ -9,6 +9,7 @@ const Viewer = ({emotionId, content}) => {
       <p className="text__subtitle">오늘의 감정</p>
       <div className={`box__emotion-area box__emotion${emotionId}`}>
         <img className="image" src={getEmotionImage(emotionId).src} alt={emotionItem.emotionName} />
+        <p className="text__emotion">{emotionItem.emotionName}</p>
       </div>
       <div className="box__text-area">
         <p className="text__subtitle">오늘의 일기</p>
