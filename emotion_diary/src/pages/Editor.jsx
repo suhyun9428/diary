@@ -27,7 +27,7 @@ const Editor = ({ initData, onSubmit }) =>{
 
   const onClickSubmitButton = () => {
     onSubmit(input);
-  }
+  };
   const nav = useNavigate();
 
   useEffect(() => {
@@ -43,8 +43,8 @@ const Editor = ({ initData, onSubmit }) =>{
     <>
       <div className="box__edit-content">
         <div className="box__section box__date">
-          <p className="text">오늘의 날짜</p>
-          <input type="date" className="form__date" name="createdDate" value={getStringedDate(input.createdDate)} onChange={onChangeInput} />
+          <p className="text" id="form__date">오늘의 날짜</p>
+          <input type="date" className="form__date" name="createdDate" value={getStringedDate(input.createdDate)} onChange={onChangeInput} aria-describedby='form__date'/>
         </div>
         <div className="box__section box__emotion">
           <p className="text">오늘의 감정</p>

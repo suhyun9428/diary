@@ -46,7 +46,7 @@ body{
   height: 100%;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: white;
+  background-color: #f9f1e7;
   box-shadow: rgba(100, 100, 100, 0.2) 0 0 29px 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -85,25 +85,21 @@ header{
     margin: 0;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
+    color: #3f3a36;
   }
 }
 .button{
   padding: 10px 20px;
   border: 0;
   border-radius: 5px;
-  background: #f0edea;
+  background: #D7CCC8;
   font-size: 18px;
   white-space: nowrap;
   cursor: pointer;
-}
-.button__positive{
-  background: greenyellow;
-  color: white;
-}
-.button__negative{
-  background: red;
-  color: white;
+  .text{
+    color: #3f3a36;
+  }
 }
 .button__right{
   display: inline-block;
@@ -112,7 +108,7 @@ header{
   margin: 0;
   margin-right: 10px;
   padding: 5px;
-  border: solid black;
+  border: solid #3f3a36;
   border-radius: 0;
   border-width: 0 2px 2px 0;
   transform: rotate(-45deg);
@@ -126,7 +122,7 @@ header{
   margin: 0;
   margin-left: 10px;
   padding: 5px;
-  border: solid black;
+  border: solid #3f3a36;
   border-radius: 0;
   border-width: 0 2px 2px 0;
   transform: rotate(135deg);
@@ -151,9 +147,11 @@ header{
   }
   .button__add{
     flex: 1;
-    background: #5c8a58;
-    font-size: 14px;
-    color: white;
+    background: #4CAF50;
+    .text{
+      font-size: 14px;
+      color: white;
+    }
   }
 }
 .box__diary-list{
@@ -205,6 +203,7 @@ header{
         .text__date{
           padding-bottom: 5px;
           font-size: 12px;
+          color: #3f3a36;
         }
         .text__context{
           display: -webkit-box;
@@ -213,7 +212,7 @@ header{
           overflow: hidden;
           word-break: break-word;
           -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical
+          -webkit-box-orient: vertical;
         }
       }
       .box__button-wrap{
@@ -276,7 +275,7 @@ header{
         padding: 5px;
         border-color: transparent;
         border-radius: 10px;
-        background: #fef7e3;
+        background: #f7e7ce;
         text-align: center;
         box-sizing: border-box;
         .image{
