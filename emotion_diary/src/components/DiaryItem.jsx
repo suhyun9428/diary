@@ -10,7 +10,7 @@ const DiaryItem = ({id, emotionId, createdDate, content})=>{
       <a href="#" className={`link__image link__image${emotionId}`} onClick={()=>nav(`/diary/${id}`)}>
         <img className="image" src={getEmotionImage(emotionId).src} alt={getEmotionImage(emotionId).alt}/>
       </a>
-      <a className="link__info">
+      <a className="link__info" onClick={()=>nav(`/diary/${id}`)}>
         <p className="text__date">{new Date(createdDate).toLocaleDateString()}</p>  
         <p className="text__context">{content}</p>
       </a>

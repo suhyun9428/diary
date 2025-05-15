@@ -5,8 +5,7 @@ const EmotionItem = ({ emotionId, isSelected, onClick }) => {
 
   return(
     <button type='button' className={`button__emotion-card ${isSelected ? `button__emotion-card--selected` : ''}`} onClick={onClick} >
-      <img className="image" src={src} />
-      <p className='text__emotion'>{alt}</p>
+      <img className="image" src={src} alt={alt} />
     </button>
   )
 }
