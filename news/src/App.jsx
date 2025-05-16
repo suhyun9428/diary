@@ -1,26 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header'
 import Home from './pages/Home'
+import Filter from './pages/Filter'
+import Location from './pages/Location'
+import Search from './pages/Search'
+import Footer from './components/Footer'
+// import { createContext } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+
 
 function App() {
   return (
     <>
-      <header>
-        <div>weather</div>
-        <title>SUN NEWS</title>
-        <button>search</button>
-      </header>
-      <main className='box__container'>
-        <Home/>
-      </main>
-      <footer>
-        <button type='button'>seacrh</button>
-        <button type='button'>home</button>
-        <button type='button'>filter</button>
-        <button type='button'>location</button>
-      </footer>
+      <Header />
+        <main className='box__container'>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/filter" element={<Filter />} />
+              <Route path="/location" element={<Location />} />
+              <Route path="/search" element={<Search />} />
+          </Routes>
+        </main>
+      <Footer />
     </>
   )
 }
