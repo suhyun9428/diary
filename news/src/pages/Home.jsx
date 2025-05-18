@@ -1,48 +1,86 @@
-import Banner from "../components/Banner"
-const dummyData = [
-  {
-    img : 'https://imgnews.pstatic.net/image/005/2025/05/15/01400101.20250515500054_20250515145707025.jpg?type=w860',
-    title : '등록금 의존도 높은 부실 사립대, 1등은 인 서울 ‘이곳’',
-    content : '재학생 1만명 이상 대형 사립 대학 중 서울 서대문구와 경기 용인 처인구에 캠퍼스를 둔 명지대의 등록금 의존도가 가장 높은 것으로 조사됐다. 사립대학교수연합회(사교련)는 15일 서울 여의도 국회에서 사립 대학 법인 진단 평가 토론회를 열고 대형 사립 대학 법인 37곳 산하 대학 38곳의 재무 건전성 등을 조사해 이렇게 발표했다. 명지대가 69.5%로 가장 높고 단국대(66.3%) 상명대 세종대(각 65.5%) 국민대(64.6%) 가천대(63.1%) 중앙대(62.2%) 경희대(61.2%) 순이다. 평균 등록금 의존율은 52.7%이다. 대학가에서는 50% 이하면 양호한 것으로 여겨진다. ' 
-  },
-  {
-    img : 'https://imgnews.pstatic.net/image/005/2025/05/15/01400101.20250515500054_20250515145707025.jpg?type=w860',
-    title : '등록금 의존도 높은 부실 사립대, 1등은 인 서울 ‘이곳’',
-    content : '재학생 1만명 이상 대형 사립 대학 중 서울 서대문구와 경기 용인 처인구에 캠퍼스를 둔 명지대의 등록금 의존도가 가장 높은 것으로 조사됐다. 사립대학교수연합회(사교련)는 15일 서울 여의도 국회에서 사립 대학 법인 진단 평가 토론회를 열고 대형 사립 대학 법인 37곳 산하 대학 38곳의 재무 건전성 등을 조사해 이렇게 발표했다. 명지대가 69.5%로 가장 높고 단국대(66.3%) 상명대 세종대(각 65.5%) 국민대(64.6%) 가천대(63.1%) 중앙대(62.2%) 경희대(61.2%) 순이다. 평균 등록금 의존율은 52.7%이다. 대학가에서는 50% 이하면 양호한 것으로 여겨진다. ' 
-  },
-  {
-    img : 'https://imgnews.pstatic.net/image/005/2025/05/15/01400101.20250515500054_20250515145707025.jpg?type=w860',
-    title : '등록금 의존도 높은 부실 사립대, 1등은 인 서울 ‘이곳’',
-    content : '재학생 1만명 이상 대형 사립 대학 중 서울 서대문구와 경기 용인 처인구에 캠퍼스를 둔 명지대의 등록금 의존도가 가장 높은 것으로 조사됐다. 사립대학교수연합회(사교련)는 15일 서울 여의도 국회에서 사립 대학 법인 진단 평가 토론회를 열고 대형 사립 대학 법인 37곳 산하 대학 38곳의 재무 건전성 등을 조사해 이렇게 발표했다. 명지대가 69.5%로 가장 높고 단국대(66.3%) 상명대 세종대(각 65.5%) 국민대(64.6%) 가천대(63.1%) 중앙대(62.2%) 경희대(61.2%) 순이다. 평균 등록금 의존율은 52.7%이다. 대학가에서는 50% 이하면 양호한 것으로 여겨진다. ' 
-  },
-  {
-    img : 'https://imgnews.pstatic.net/image/005/2025/05/15/01400101.20250515500054_20250515145707025.jpg?type=w860',
-    title : '등록금 의존도 높은 부실 사립대, 1등은 인 서울 ‘이곳’',
-    content : '재학생 1만명 이상 대형 사립 대학 중 서울 서대문구와 경기 용인 처인구에 캠퍼스를 둔 명지대의 등록금 의존도가 가장 높은 것으로 조사됐다. 사립대학교수연합회(사교련)는 15일 서울 여의도 국회에서 사립 대학 법인 진단 평가 토론회를 열고 대형 사립 대학 법인 37곳 산하 대학 38곳의 재무 건전성 등을 조사해 이렇게 발표했다. 명지대가 69.5%로 가장 높고 단국대(66.3%) 상명대 세종대(각 65.5%) 국민대(64.6%) 가천대(63.1%) 중앙대(62.2%) 경희대(61.2%) 순이다. 평균 등록금 의존율은 52.7%이다. 대학가에서는 50% 이하면 양호한 것으로 여겨진다. ' 
-  },
-  {
-    img : 'https://imgnews.pstatic.net/image/005/2025/05/15/01400101.20250515500054_20250515145707025.jpg?type=w860',
-    title : '등록금 의존도 높은 부실 사립대, 1등은 인 서울 ‘이곳’',
-    content : '재학생 1만명 이상 대형 사립 대학 중 서울 서대문구와 경기 용인 처인구에 캠퍼스를 둔 명지대의 등록금 의존도가 가장 높은 것으로 조사됐다. 사립대학교수연합회(사교련)는 15일 서울 여의도 국회에서 사립 대학 법인 진단 평가 토론회를 열고 대형 사립 대학 법인 37곳 산하 대학 38곳의 재무 건전성 등을 조사해 이렇게 발표했다. 명지대가 69.5%로 가장 높고 단국대(66.3%) 상명대 세종대(각 65.5%) 국민대(64.6%) 가천대(63.1%) 중앙대(62.2%) 경희대(61.2%) 순이다. 평균 등록금 의존율은 52.7%이다. 대학가에서는 50% 이하면 양호한 것으로 여겨진다. ' 
-  }
-]
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Banner from '../components/Banner';
+import { translateText } from "../utils/translateText";
+
 const Home = () => {
-  return(
+  const [articles, setArticles] = useState([]);
+  const [translatedArticles, setTranslatedArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [category, setCategory] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [page, setPage] = useState(1);
+
+  const apiKey = import.meta.env.VITE_NEWS_API_KEY;
+  const pageSize = 5;
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get("https://gnews.io/api/v4/top-headlines", {
+          params: {
+            lang: "en",
+            topic: category || undefined,
+            q: keyword || undefined,
+            max: pageSize,
+            page: page,
+            token: apiKey,
+          },
+        });
+
+        const data = response.data.articles || [];
+        setArticles(data);
+
+        const translated = await Promise.all(
+          data.map(async (item) => {
+            const title = await translateText(item.title);
+            const content = await translateText(item.content || item.description || "");
+            return {
+              ...item,
+              title,
+              content,
+            };
+          })
+        );
+        setTranslatedArticles(translated);
+      } catch (err) {
+        console.error(err);
+        setError("뉴스를 불러오는 중 오류가 발생했습니다.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, [category, keyword, page]);
+
+  const nextPage = () => setPage((prev) => prev + 1);
+  const prevPage = () => setPage((prev) => Math.max(prev - 1, 1));
+
+  if (loading) return <div>뉴스 로딩 중...</div>;
+  if (error) return <div>{error}</div>;
+
+  return (
     <>
       <Banner />
       <ul className="list__news">
-        {dummyData.map((item, idx) => {
-          return(
-            <li key={idx} className="list-item">
-              <img src={item.img} className="image"/>
-              <p className="text__title">{item.title}</p>
-              <span className="text__content">{item.content}</span>
-            </li>
-          )
-        })}
+        {translatedArticles.map((item, idx) => (
+          <li key={idx} className="list-item">
+            {item.image && <img src={item.image} alt="뉴스 이미지" className="image" />}
+            <p className="text__title">{item.title}</p>
+            <span className="text__content">{item.content}</span>
+          </li>
+        ))}
       </ul>
-      <div>pagination</div>
+      <div className="box__pagination">
+        <button className="button__pagination" onClick={prevPage} disabled={page === 1}><span className="for-a11y">이전</span></button>
+        <span className="text__current-page">{page}</span>
+        <button className="button__pagination" onClick={nextPage}><span className="for-a11y">다음</span></button>
+      </div>
     </>
-  )
-}
+  );
+};
+
 export default Home;

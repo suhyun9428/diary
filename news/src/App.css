@@ -11,8 +11,32 @@
   box-sizing: border-box;
   color: #000;
 }
+.for-a11y{
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+#root{
+  max-width: 768px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #dcd9d3;
+}
 .box__container{
-  padding: 0 20px;
+  position: relative;
+  top: 48px;
+  width: 360px;
+  height: calc(100vh - 96px);
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  background-color: #dcd9d3;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .swiper.box__banner-wrap{
   width: 100%;
@@ -69,16 +93,18 @@
   margin-top: 20px;
   list-style: none;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, 48%);
+  grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
   .list-item{
     .image{
       width: 100%;
+      height: 100px;
+      object-fit: cover;
     }
     .text__title{
       font-weight: bold;
       display: -webkit-box;
-      height: 15px;
+      max-height: 14px;
       margin-top: 3px;
       word-break: break-word;
       -webkit-line-clamp: 1;
@@ -90,7 +116,7 @@
     }
     .text__content{
       display: -webkit-box;
-      height: 63px;
+      max-height: 63px;
       margin-top: 2px;
       word-break: break-word;
       -webkit-line-clamp: 3;
@@ -100,21 +126,52 @@
     }
   }
 }
+.box__pagination{
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  .button__pagination{
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background-color: transparent;
+  }
+  .text__current-page{
+    font-size: 13px;
+    text-align: center;
+  }
+}
 header{
   position: fixed;
   top: 0;
+  left: 50%;
+  min-width: 360px;
   width: 100%;
+  max-width: 768px;
   height: 48px;
+  margin: 0 auto;
   border-bottom: 1px solid #e0e0e0;
   background-color: #dcd9d3;
+  transform: translateX(-50%);
   .box__weather{
     display: inline-block;
-    top: 0;
-    left: 0;
     width: 48px;
     height: 48px;
-    background: red;
     vertical-align: top;
+    .image{
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+    }
+    .text__temp{
+      font-size: 11px;
+      text-align: center;
+    }
+    &.box__weather--error{
+      background-color: red;
+    }
   }
   .text__title{
     display: inline-block;
@@ -138,23 +195,17 @@ header{
     border: 0;
   }
 }
-.box__container{
-  position: relative;
-  top: 48px;
-  height: calc(100vh - 96px);
-  padding-top: 20px;
-  background-color: #dcd9d3;
-  overflow: hidden;
-  overflow-y: auto;
-}
 footer{
   display: flex;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
+  min-width: 360px;
   width: 100%;
+  max-width: 768px;
   height: 48px;
+  margin: 0 auto;
   border-top: 1px solid #e0e0e0;
   background-color: #dcd9d3;
   align-items: center;
@@ -173,5 +224,15 @@ footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
+    margin-bottom: 20px;
+    .button__filter{
+      padding: 5px 0;
+      font-size: 14px;
+    }
+  }
+  .box__filter-contents{
+    .list__filter{
+      list-style: none;
+    }
   }
 }

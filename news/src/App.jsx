@@ -8,8 +8,6 @@ import Footer from './components/Footer'
 // import { createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-
-
 function App() {
   return (
     <>
