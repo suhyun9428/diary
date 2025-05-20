@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Banner from '../components/Banner';
 import { translateText } from "../utils/translateText";
@@ -22,8 +22,6 @@ const Home = () => {
         const response = await axios.get("https://gnews.io/api/v4/top-headlines", {
           params: {
             lang: "en",
-            topic: category || undefined,
-            q: keyword || undefined,
             max: pageSize,
             page: page,
             token: apiKey,
@@ -54,7 +52,7 @@ const Home = () => {
     };
 
     fetchNews();
-  }, [category, keyword, page]);
+  }, [page]);
 
   const nextPage = () => setPage((prev) => prev + 1);
   const prevPage = () => setPage((prev) => Math.max(prev - 1, 1));

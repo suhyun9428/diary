@@ -1,7 +1,4 @@
-import {
-  isQuotaExceeded,
-  incrementRequestCount,
-} from "./limitStore";
+import { isQuotaExceeded, incrementRequestCount } from "./limitStore";
 
 export const translateText = async (text) => {
   if (isQuotaExceeded()) {
@@ -38,5 +35,4 @@ export const translateText = async (text) => {
     console.error("번역 오류:", error);
     return "번역 오류";
   }
-  };
-  
+};
