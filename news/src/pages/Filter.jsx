@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { translateText } from "../utils/translateText";
+import classNames from 'classnames';
+
 const valueArray = [
   {
     value : '',
@@ -34,7 +36,8 @@ const valueArray = [
     value : 'health',
     title : '건강'
   }
-]
+];
+
 const Filter = () => {
   const [category, setCategory] = useState("");
   const [articles, setArticles] = useState([]);
@@ -45,11 +48,9 @@ const Filter = () => {
   const [page, setPage] = useState(1);
   const [active, setActive] = useState();
 
-  const handleCategory = (e) => {
-    e.preventDefault();
-    console.log(e.target.value, 'val');
+  const handleCategory = (e, idx) => {
     setCategory(e.target.value)
-    // setActive()
+    setActive(idx);
   };
 
   const apiKey = import.meta.env.VITE_NEWS_API_KEY;
@@ -95,13 +96,15 @@ const Filter = () => {
 
     fetchNews();
   }, [category]);
-// button__filter--active
+
   return (
     <div className="box__filter">
       <div className="box__filter-buttons">
         {valueArray.map((item, idx)=>{
           return(
-            <button key={idx} type="button" className="button__filter" value={item.value} onClick={handleCategory}>{item.title}</button>
+            <button key={idx} type="button" className={classNames('button__filter', active === idx ? 'button__filter--active':'')} value={item.value} onClick={(e) => handleCategory(e, idx)} 
+            aria-selected={active === idx}
+            >{item.title}</button>
           )
         })}
       </div>

@@ -29,7 +29,7 @@ const Weather = () => {
         />
         <p className='text__temp'>{weather.main.temp}°C</p>
         </div>
-      ):(<div className='box__weather box__weather--error'>error</div>)}
+      ):(<div className='box__weather box__weather--error'>error!</div>)}
     </>
   )
 }
