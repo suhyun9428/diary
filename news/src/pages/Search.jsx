@@ -64,51 +64,55 @@ const Search = () => {
   return(
     <>
       <div className="box__search">
-        <input type="text" placeholder="?" className="form__keyword" />
-        <button type="submit" className="button__search">검색</button>
-      </div>
-      <div className="box__recent">
-        <p className="text__recent">최근 검색어</p>
-        <Swiper
-          className="list__recent"
-          modules={[Scrollbar]}
-          slidesPerView="auto"
-        >
-          {dummyData.map((item, idx) => {
-            return(
-              <SwiperSlide key={idx} className='list-item'>
-                <button type="button" className="button__recent">{item}</button>
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
-      </div>
-      <div className="box__sorting-wrap">
-        <div className="box__sorting">
-          <input className="form__sorting" type="radio" id="recent" name="sorting" />
-          <label htmlFor="recent" className="text__sorting">최신순</label>
+        <div className="box__search-inner">
+          <div className="box__search-bar">
+            <input type="text" placeholder="뉴스 검색" className="form__keyword" />
+            <button type="submit" className="button__search">검색</button>
+          </div>
+          <div className="box__recent">
+            <p className="for-a11y">최근 검색어</p>
+            <Swiper
+              className="list__recent"
+              modules={[Scrollbar]}
+              slidesPerView="auto"
+            >
+              {dummyData.map((item, idx) => {
+                return(
+                  <SwiperSlide key={idx} className='list-item'>
+                    <button type="button" className="button__recent">{item}</button>
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          </div>
+          <div className="box__sorting-wrap">
+            <div className="box__sorting">
+              <input className="form__sorting" type="radio" id="recent" name="sorting" />
+              <label htmlFor="recent" className="text__sorting">최신순</label>
+            </div>
+            <div className="box__sorting">
+              <input className="form__sorting" type="radio" id="correct" name="sorting" />
+              <label htmlFor="correct" className="text__sorting">정확도순</label>
+            </div>
+            <div className="box__sorting">
+              <input className="form__sorting" type="radio" id="rating" name="sorting" />
+              <label htmlFor="rating" className="text__sorting">인기순</label>
+            </div>
+          </div>
         </div>
-        <div className="box__sorting">
-          <input className="form__sorting" type="radio" id="correct" name="sorting" />
-          <label htmlFor="correct" className="text__sorting">정확도순</label>
+        <div className="box__filter-contents">
+          <ul className="list__filter">
+            {translatedArticles.map((item, idx) => {
+              return(
+                <li className="list-item" key={idx}>
+                  <em className="text__ranking">{idx+1}.</em>
+                  <p className="text__title">{item.title}</p>
+                  <img className="image" src={item.image} alt="" />
+                </li>
+              )
+            })}
+            </ul>
         </div>
-        <div className="box__sorting">
-          <input className="form__sorting" type="radio" id="rating" name="sorting" />
-          <label htmlFor="rating" className="text__sorting">인기순</label>
-        </div>
-      </div>
-      <div className="box__filter-contents">
-        <ul className="list__filter">
-          {translatedArticles.map((item, idx) => {
-            return(
-              <li className="list-item" key={idx}>
-                <em className="text__ranking">{idx+1}.</em>
-                <p className="text__title">{item.title}</p>
-                <img className="image" src={item.image} alt="" />
-              </li>
-            )
-          })}
-          </ul>
       </div>
     </>
   )

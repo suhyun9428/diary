@@ -61,23 +61,25 @@ const Home = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <>
-      <Banner />
-      <ul className="list__news">
-        {translatedArticles.map((item, idx) => (
-          <li key={idx} className="list-item">
-            {item.image && <img src={item.image} alt="뉴스 이미지" className="image" />}
-            <p className="text__title">{item.title}</p>
-            <span className="text__content">{item.content}</span>
-          </li>
-        ))}
-      </ul>
-      <div className="box__pagination">
-        <button className="button__pagination" onClick={prevPage} disabled={page === 1}><span className="for-a11y">이전</span></button>
-        <span className="text__current-page">{page}</span>
-        <button className="button__pagination" onClick={nextPage}><span className="for-a11y">다음</span></button>
+    <div className="box__home">
+      <div className="box__home-inner">
+        <Banner />
+        <ul className="list__news">
+          {translatedArticles.map((item, idx) => (
+            <li key={idx} className="list-item">
+              {item.image && <img src={item.image} alt="뉴스 이미지" className="image" />}
+              <p className="text__title">{item.title}</p>
+              <span className="text__content">{item.content}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="box__pagination">
+          <button className="button__pagination button__prev" onClick={prevPage} disabled={page === 1}><span className="for-a11y">이전</span></button>
+          <span className="text__current-page">{page}</span>
+          <button className="button__pagination button__next" onClick={nextPage}><span className="for-a11y">다음</span></button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

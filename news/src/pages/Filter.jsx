@@ -46,7 +46,7 @@ const Filter = () => {
   const [error, setError] = useState(null);
   const [keyword, setKeyword] = useState("");
   const [page, setPage] = useState(1);
-  const [active, setActive] = useState();
+  const [active, setActive] = useState(0);
 
   const handleCategory = (e, idx) => {
     setCategory(e.target.value)
@@ -99,14 +99,16 @@ const Filter = () => {
 
   return (
     <div className="box__filter">
-      <div className="box__filter-buttons">
-        {valueArray.map((item, idx)=>{
-          return(
-            <button key={idx} type="button" className={classNames('button__filter', active === idx ? 'button__filter--active':'')} value={item.value} onClick={(e) => handleCategory(e, idx)} 
-            aria-selected={active === idx}
-            >{item.title}</button>
-          )
-        })}
+      <div className="box__filter-inner">
+        <div className="box__filter-buttons">
+          {valueArray.map((item, idx)=>{
+            return(
+              <button key={idx} type="button" className={classNames('button__filter', active === idx ? 'button__filter--active':'')} value={item.value} onClick={(e) => handleCategory(e, idx)} 
+              aria-selected={active === idx}
+              >{item.title}</button>
+            )
+          })}
+        </div>
       </div>
       <div className="box__filter-contents">
         <ul className="list__filter">
@@ -124,7 +126,5 @@ const Filter = () => {
     </div>    
   );
 };
-
-
 
 export default Filter;
